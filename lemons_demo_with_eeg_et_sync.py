@@ -126,7 +126,7 @@ def save_et_locations_over_images(sync_df, output_dir):
         elif row["diff"] == -1:  # a new lemon starts
             image_index += 1
             if image_index >= len(all_image_paths):  # caused by manual closure of the app
-                continue
+                break
             image, draw = create_new_image_objects(all_image_paths[image_index])
             currently_processing_image = True
         else:  # == 0, or nan for the first sample
